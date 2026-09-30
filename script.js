@@ -1,35 +1,301 @@
-// เปิดรูปเมื่อคลิก
-const images = document.querySelectorAll(".gallery img");
-const popup = document.getElementById("popup");
-const popupImg = document.getElementById("popup-img");
+/* =========================================
+   PORTFOLIO DATA
+========================================= */
 
-images.forEach((img) => {
-    img.addEventListener("click", () => {
-        popup.style.display = "flex";
-        popupImg.src = img.src;
-    });
+const portfolioData = [
+
+  {
+    number: "01",
+    image: "portfolio01.jpg",
+    title: "หน้าปก Portfolio",
+    description: "แฟ้มสะสมผลงานสำหรับการศึกษาต่อ"
+  },
+
+  {
+    number: "02",
+    image: "portfolio02.jpg",
+    title: "Statement of Purpose",
+    description: "เหตุผลและแรงบันดาลใจในการศึกษาต่อ"
+  },
+
+  {
+    number: "03",
+    image: "portfolio03.jpg",
+    title: "Profile",
+    description: "ประวัติส่วนตัวและข้อมูลเกี่ยวกับฉัน"
+  },
+
+  {
+    number: "04",
+    image: "portfolio04.jpg",
+    title: "Education",
+    description: "ประวัติการศึกษาและเส้นทางการเรียนรู้"
+  },
+
+  {
+    number: "05",
+    image: "portfolio05.jpg",
+    title: "Transcript",
+    description: "ผลการเรียนและความตั้งใจในการศึกษา"
+  },
+
+  {
+    number: "06",
+    image: "portfolio06.jpg",
+    title: "ประสบการณ์ฝึกงาน",
+    description: "ประสบการณ์จากการฝึกงานที่โรงพยาบาลกระทุ่มแบน"
+  },
+
+  {
+    number: "07",
+    image: "portfolio07.jpg",
+    title: "STEM Education",
+    description: "กิจกรรม STEM และการเรียนรู้ผ่านการลงมือทำ"
+  },
+
+  {
+    number: "08",
+    image: "portfolio08.jpg",
+    title: "กิจกรรมโรงเรียน",
+    description: "กิจกรรมและประสบการณ์ภายในโรงเรียน"
+  },
+
+  {
+    number: "09",
+    image: "portfolio09.jpg",
+    title: "กิจกรรม",
+    description: "กิจกรรมที่ช่วยพัฒนาการทำงานร่วมกับผู้อื่น"
+  },
+
+  {
+    number: "10",
+    image: "portfolio10.jpg",
+    title: "กิจกรรมเพื่อสังคม",
+    description: "จิตอาสาและการทำงานเป็นทีม"
+  },
+
+  {
+    number: "11",
+    image: "portfolio11.jpg",
+    title: "Certificates",
+    description: "เกียรติบัตรและผลงานที่ได้รับ"
+  },
+
+  {
+    number: "12",
+    image: "portfolio12.jpg",
+    title: "Thank You",
+    description: "Caring beyond what the eyes can see"
+  }
+
+];
+
+
+/* =========================================
+   CREATE PORTFOLIO CARDS
+========================================= */
+
+const portfolioGrid =
+  document.getElementById("portfolioGrid");
+
+portfolioData.forEach((item, index) => {
+
+  const card = document.createElement("div");
+
+  card.className = "portfolio-card";
+
+  card.onclick = () => openModal(index);
+
+  card.innerHTML = `
+
+    <div class="portfolio-image">
+
+      <img
+        src="${item.image}"
+        alt="${item.title}"
+        loading="lazy"
+      >
+
+    </div>
+
+    <div class="portfolio-card-info">
+
+      <div class="portfolio-number">
+        ${item.number}
+      </div>
+
+      <h3>
+        ${item.title}
+      </h3>
+
+      <p>
+        ${item.description}
+      </p>
+
+    </div>
+
+  `;
+
+  portfolioGrid.appendChild(card);
+
 });
 
-// ปิดรูปเมื่อคลิกพื้นหลัง
-popup.addEventListener("click", () => {
-    popup.style.display = "none";
+
+/* =========================================
+   MODAL
+========================================= */
+
+let currentIndex = 0;
+
+const modal =
+  document.getElementById("portfolioModal");
+
+const modalImage =
+  document.getElementById("modalImage");
+
+const modalNumber =
+  document.getElementById("modalNumber");
+
+const modalTitle =
+  document.getElementById("modalTitle");
+
+const modalDescription =
+  document.getElementById("modalDescription");
+
+
+function openModal(index) {
+
+  currentIndex = index;
+
+  updateModal();
+
+  modal.classList.add("active");
+
+  document.body.style.overflow = "hidden";
+}
+
+
+function closeModal() {
+
+  modal.classList.remove("active");
+
+  document.body.style.overflow = "auto";
+}
+
+
+function updateModal() {
+
+  const item = portfolioData[currentIndex];
+
+  modalImage.src = item.image;
+
+  modalImage.alt = item.title;
+
+  modalNumber.textContent = item.number;
+
+  modalTitle.textContent = item.title;
+
+  modalDescription.textContent =
+    item.description;
+}
+
+
+function nextPortfolio() {
+
+  currentIndex++;
+
+  if (currentIndex >= portfolioData.length) {
+    currentIndex = 0;
+  }
+
+  updateModal();
+}
+
+
+function previousPortfolio() {
+
+  currentIndex--;
+
+  if (currentIndex < 0) {
+    currentIndex = portfolioData.length - 1;
+  }
+
+  updateModal();
+}
+
+
+/* =========================================
+   KEYBOARD
+========================================= */
+
+document.addEventListener("keydown", function(event) {
+
+  if (!modal.classList.contains("active")) {
+    return;
+  }
+
+  if (event.key === "Escape") {
+    closeModal();
+  }
+
+  if (event.key === "ArrowRight") {
+    nextPortfolio();
+  }
+
+  if (event.key === "ArrowLeft") {
+    previousPortfolio();
+  }
+
 });
 
-// เอฟเฟกต์เลื่อนหน้าจอ
-const cards = document.querySelectorAll(".card, .gallery img");
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-        }
-    });
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+function toggleMenu() {
+
+  const nav =
+    document.querySelector(".nav-links");
+
+  nav.classList.toggle("active");
+
+}
+
+
+/* ปิดเมนูเมื่อกดลิงก์ */
+
+document.querySelectorAll(".nav-links a")
+.forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    document
+      .querySelector(".nav-links")
+      .classList.remove("active");
+
+  });
+
 });
 
-cards.forEach((card) => {
-    card.style.opacity = "0";
-    card.style.transform = "translateY(40px)";
-    card.style.transition = "0.7s ease";
-    observer.observe(card);
-});
+
+/* =========================================
+   IMAGE ERROR HANDLING
+========================================= */
+
+document.addEventListener(
+  "error",
+  function(event) {
+
+    if (
+      event.target.tagName === "IMG"
+    ) {
+
+      event.target.style.background =
+        "#f3e5d6";
+
+    }
+
+  },
+  true
+);
