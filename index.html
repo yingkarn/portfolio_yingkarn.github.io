@@ -1,151 +1,315 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio | Yingkarn</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+  <title>Portfolio | เนตรอัปสร ศิริวาท</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="hero">
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo">N<span>.</span>S</div>
 
-<img src="IMG_5971.jpeg" class="cover">
+    <div class="nav-links">
+      <a href="#home">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#portfolio">PORTFOLIO</a>
+      <a href="#contact">CONTACT</a>
+    </div>
 
-<div class="overlay"></div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  </nav>
 
-<div class="hero-content">
 
-<img src="IMG_5972.jpeg" class="profile">
+  <!-- HERO -->
+  <section id="home" class="hero">
 
-<h1>นางสาวยิ่งกาญจน์ ไกรมะเริงรุ่งเจริญ</h1>
+    <div class="hero-decoration decor-one"></div>
+    <div class="hero-decoration decor-two"></div>
 
-<p>Portfolio เพื่อยื่นเข้าศึกษาต่อ คณะครุศาสตร์ สาขาการศึกษาปฐมวัย</p>
+    <div class="hero-text">
 
-<a href="#about" class="btn">เริ่มชมพอร์ต</a>
+      <p class="small-title">WELCOME TO MY PORTFOLIO</p>
 
-</div>
+      <h1>
+        เนตรอัปสร<br>
+        <span>ศิริวาท</span>
+      </h1>
 
-</header>
+      <p class="school">
+        โรงเรียนกระทุ่มแบน “วิเศษสมุทคุณ”
+      </p>
 
-<section id="about">
+      <div class="career">
+        <span>MEDICAL TECHNOLOGY</span>
+        <b>×</b>
+        <span>RADIOLOGIC TECHNOLOGY</span>
+      </div>
 
-<h2>🌸 เกี่ยวกับฉัน</h2>
+      <a href="#portfolio" class="main-btn">
+        ดู Portfolio ของฉัน
+        <span>→</span>
+      </a>
 
-<div class="card">
+    </div>
 
-<p>
+    <div class="hero-visual">
 
-สวัสดีค่ะ ดิฉันมีความใฝ่ฝันที่จะเป็นครูปฐมวัย
-เพราะเชื่อว่าเด็กทุกคนสามารถเติบโตได้อย่างมีคุณภาพ
-หากได้รับการดูแลและส่งเสริมการเรียนรู้อย่างเหมาะสม
-ดิฉันชื่นชอบการทำกิจกรรม การดูแลเด็ก
-และการสร้างบรรยากาศแห่งการเรียนรู้อย่างสร้างสรรค์
+      <div class="circle-back"></div>
 
-</p>
+      <div class="hero-card">
+        <img src="portfolio01.jpg" alt="Portfolio Cover">
+      </div>
 
-</div>
+      <div class="floating-card">
+        <span>✦</span>
+        <p>MY<br>PORTFOLIO</p>
+      </div>
 
-</section>
+    </div>
 
-<section>
+  </section>
 
-<h2>🏆 ผลงาน</h2>
 
-<div class="gallery">
+  <!-- ABOUT -->
+  <section id="about" class="about section">
 
-<img src="IMG_5973.jpeg">
+    <div class="section-heading">
+      <p>ABOUT ME</p>
+      <h2>เกี่ยวกับฉัน</h2>
+      <div class="line"></div>
+    </div>
 
-<img src="IMG_5974.jpeg">
+    <div class="about-grid">
 
-<img src="IMG_5975.jpeg">
+      <div class="about-image">
+        <div class="image-frame">
+          <img src="portfolio03.jpg" alt="Profile">
+        </div>
 
-<img src="IMG_5976.jpeg">
+        <div class="number">01</div>
+      </div>
 
-<img src="IMG_5977.jpeg">
 
-<img src="IMG_5978.jpeg">
+      <div class="about-content">
 
-<img src="IMG_5979.jpeg">
+        <div class="intro-box">
+          <span class="quote">“</span>
 
-<img src="IMG_5980.jpeg">
+          <p>
+            ฉันเป็นนักเรียนที่มีความสนใจด้านวิทยาศาสตร์สุขภาพ
+            และเทคโนโลยีทางการแพทย์ โดยเฉพาะด้านรังสีเทคนิค
+            พร้อมเรียนรู้สิ่งใหม่ ๆ และพัฒนาตนเองอยู่เสมอ
+          </p>
+        </div>
 
-<img src="IMG_5981.jpeg">
 
-</div>
+        <div class="info-cards">
 
-</section>
+          <div class="info-card">
+            <div class="icon">♡</div>
+            <div>
+              <h3>ความสนใจ</h3>
+              <p>
+                สนใจด้านวิทยาศาสตร์สุขภาพ
+                และเทคโนโลยีทางการแพทย์
+              </p>
+            </div>
+          </div>
 
-<section>
 
-<h2>❤️ กิจกรรมจิตอาสา</h2>
+          <div class="info-card">
+            <div class="icon">✦</div>
+            <div>
+              <h3>เป้าหมาย</h3>
+              <p>
+                มุ่งศึกษาต่อด้านรังสีเทคนิค
+                และนำความรู้ไปใช้ช่วยสนับสนุน
+                การวินิจฉัยและการรักษาผู้ป่วย
+              </p>
+            </div>
+          </div>
 
-<div class="card">
 
-<p>
+          <div class="info-card">
+            <div class="icon">☼</div>
+            <div>
+              <h3>ประสบการณ์</h3>
+              <p>
+                มีประสบการณ์ฝึกงานในโรงพยาบาล
+                เข้าร่วมกิจกรรม STEM
+                และกิจกรรมต่าง ๆ ของโรงเรียน
+              </p>
+            </div>
+          </div>
 
-เข้าร่วมกิจกรรมเพื่อสังคม
-ช่วยเหลือโรงเรียน ชุมชน
-และกิจกรรมส่งเสริมการเรียนรู้ของเด็ก
-เพื่อพัฒนาความรับผิดชอบ
-การทำงานร่วมกับผู้อื่น
-และจิตสาธารณะ
+        </div>
 
-</p>
+      </div>
 
-</div>
+    </div>
 
-</section>
+  </section>
 
-<section>
 
-<h2>🎓 เป้าหมายในอนาคต</h2>
+  <!-- HIGHLIGHT -->
+  <section class="highlight">
 
-<div class="card">
+    <div class="highlight-item">
+      <strong>3.91</strong>
+      <span>GPA</span>
+    </div>
 
-<p>
+    <div class="highlight-line"></div>
 
-มุ่งมั่นศึกษาต่อคณะครุศาสตร์
-สาขาการศึกษาปฐมวัย
-เพื่อพัฒนาตนเองให้เป็นครูที่มีคุณธรรม
-มีความรู้ และสามารถสร้างแรงบันดาลใจ
-ให้กับเด็กปฐมวัยได้อย่างเต็มศักยภาพ
+    <div class="highlight-item">
+      <strong>12</strong>
+      <span>PORTFOLIO PAGES</span>
+    </div>
 
-</p>
+    <div class="highlight-line"></div>
 
-</div>
+    <div class="highlight-item">
+      <strong>STEM</strong>
+      <span>EDUCATION</span>
+    </div>
 
-</section>
+  </section>
 
-<section>
 
-<h2>📞 ติดต่อ</h2>
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="portfolio section">
 
-<div class="card">
+    <div class="section-heading">
+      <p>MY PORTFOLIO</p>
+      <h2>แฟ้มสะสมผลงาน</h2>
+      <div class="line"></div>
+    </div>
 
-<p>📧 Email : your@email.com</p>
+    <p class="portfolio-intro">
+      คลิกที่แต่ละการ์ดเพื่อชมผลงาน
+    </p>
 
-<p>📱 โทร : 08x-xxx-xxxx</p>
 
-<p>📍 จังหวัด ...............</p>
+    <div class="portfolio-grid" id="portfolioGrid">
 
-</div>
+      <!-- JavaScript จะสร้าง Portfolio ทั้ง 12 หน้าให้ตรงนี้ -->
 
-</section>
+    </div>
 
-<div id="popup">
+  </section>
 
-<img id="popup-img">
 
-</div>
+  <!-- CONTACT -->
+  <section id="contact" class="contact section">
 
-<script src="script.js"></script>
+    <div class="section-heading light">
+      <p>CONTACT</p>
+      <h2>ช่องทางการติดต่อ</h2>
+      <div class="line"></div>
+    </div>
+
+    <p class="contact-intro">
+      หากต้องการติดต่อ สามารถติดต่อผ่านช่องทางด้านล่าง
+    </p>
+
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <div class="contact-icon">✉</div>
+        <p>EMAIL</p>
+        <h3>netupsornsiriwat080528@gmail.com</h3>
+      </div>
+
+
+      <div class="contact-card">
+        <div class="contact-icon">◎</div>
+        <p>INSTAGRAM</p>
+        <h3>goxivyxli</h3>
+      </div>
+
+
+      <div class="contact-card">
+        <div class="contact-icon">♡</div>
+        <p>SCHOOL</p>
+        <h3>
+          โรงเรียนกระทุ่มแบน<br>
+          “วิเศษสมุทคุณ”
+        </h3>
+      </div>
+
+    </div>
+
+
+    <div class="contact-quote">
+      “ความถูกต้องในจุดเล็ก ๆ<br>
+      คือความปลอดภัยในชีวิตที่ยิ่งใหญ่”
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 Netupsorn Siriwat
+      <span>♡</span>
+      Portfolio
+    </p>
+  </footer>
+
+
+  <!-- PORTFOLIO MODAL -->
+  <div class="modal" id="portfolioModal">
+
+    <div class="modal-overlay" onclick="closeModal()"></div>
+
+    <div class="modal-box">
+
+      <button class="close-btn" onclick="closeModal()">×</button>
+
+      <button class="prev-btn" onclick="previousPortfolio()">‹</button>
+
+      <div class="modal-content">
+
+        <div class="modal-image">
+          <img id="modalImage" src="" alt="Portfolio">
+        </div>
+
+        <div class="modal-info">
+
+          <span id="modalNumber">01</span>
+
+          <h2 id="modalTitle">
+            Portfolio
+          </h2>
+
+          <p id="modalDescription">
+            รายละเอียดผลงาน
+          </p>
+
+        </div>
+
+      </div>
+
+      <button class="next-btn" onclick="nextPortfolio()">›</button>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
 
 </body>
-
 </html>
